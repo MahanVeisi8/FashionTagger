@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    .hero.is-primary {
+      background: linear-gradient(45deg, #ff0000, #000000);
+      color: white;
+    }
+    .hero-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .button.is-large {
+      margin-top: 20px;
+      background-color: #ff0000;
+      border-color: #ff0000;
+      color: white;
+    }
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      color: #fff;
+    }
+    .table-container {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 18px;
+      min-width: 400px;
+    }
+    table th, table td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    table th {
+      background-color: #ff0000;
+      color: white;
+    }
+    table td {
+      background-color: #2a2a2a;
+      color: #fff;
+      font-weight: bold;
+    }
+    table tr:nth-child(even) td {
+      background-color: #1a1a1a;
+    }
+    .second-prediction {
+      color: red;
+    }
+    .content h2 {
+      color: #fff;
+    }
+    table td:first-child {
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-2">Prediction Result</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result Section -->
+  <section class="section">
+    <div class="container">
+      <figure class="image is-128x128" style="margin: 0 auto;">
+        <img src="{{ url_for('uploaded_file', filename=image_path) }}" alt="Uploaded Image">
+      </figure>
+      <div class="content">
+        <h2 class="title has-text-centered">Predicted Labels:</h2>
+        <div class="table-container">
+          <table class="table is-fullwidth">
+            <thead>
+              <tr>
+                <th>Label</th>
+                <th>Prediction</th>
+                <th>Confidence</th>
+                <th>Second Prediction</th>
+                <th>Second Confidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for key, value in prediction.items() %}
+              {% if '_second' not in key %}
+              <tr>
+                <td><strong>{{ key }}</strong></td>
+                <td>{{ value[0] }}</td>
+                <td>{{ '%.2f'|format(value[1] * 100) }}%</td>
+                <td>
+                  {% if key + '_second' in prediction %}
+                  <span class="second-prediction">{{ prediction[key + '_second'][0] }}</span>
+                  {% else %}
+                  -
+                  {% endif %}
+                </td>
+                <td>
+                  {% if key + '_second' in prediction %}
+                  <span class="second-prediction">{{ '%.2f'|format(prediction[key + '_second'][1] * 100) }}%</span>
+                  {% else %}
+                  -
+                  {% endif %}
+                </td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <a class="button is-large is-fullwidth" href="{{ url_for('upload_file') }}">Upload Another Image</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer has-background-black">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Fashion Tagger</strong> by <a class="highlight" href="#"><a class="highlight" href="#">Mahan Veisi</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

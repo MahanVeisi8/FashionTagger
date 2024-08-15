@@ -1,0 +1,68 @@
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.hero.is-primary {
+  background: linear-gradient(45deg, #ff0000, #000000);
+  color: white;
+}
+
+.hero-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.button.is-large {
+  margin-top: 20px;
+  background-color: #ff0000;
+  border-color: #ff0000;
+  color: white;
+}
+
+.content {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.file-label {
+  background-color: #fff;
+  color: #000;
+  border-color: #ff0000;
+}
+
+.file-label .file-icon {
+  color: #ff0000;
+}
+
+.notification {
+  background-color: #ff0000;
+  color: white;
+}
+
+.steps {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.step-item.is-active .step-marker {
+  background-color: #ff0000;
+}
+
+.step-item.is-active .step-details {
+  color: #ff0000;
+}
+
+.step-details p {
+  color: #fff;
+}
+
+.step-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Fashion Tagger</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+    .hero.is-primary {
+      background: linear-gradient(45deg, #ff0000, #000000);
+      color: white;
+    }
+    .hero-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .button.is-large {
+      margin-top: 20px;
+      background-color: #ff0000;
+      border-color: #ff0000;
+      color: white;
+    }
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .profile-image {
+      width: 250px; /* Increased size */
+      height: 250px; /* Increased size */
+      border-radius: 50%;
+      border: 2px solid #ff0000;
+      margin-bottom: 20px;
+    }
+    .intro-text {
+      color: #fff;
+    }
+    .highlight {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">Welcome to Fashion Tagger</h1>
+        <h2 class="subtitle">Upload your fashion images and get detailed labels predicted by our AI model.</h2>
+        <a href="{{ url_for('upload_file') }}" class="button is-large">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">About Fashion Tagger</h2>
+      <div class="content">
+        <p class="intro-text">
+          Fashion Tagger is an AI-powered application designed to help you identify and label various fashion items in your images.
+          Whether you're a fashion enthusiast, a blogger, or someone who loves keeping track of fashion trends, our application provides detailed and accurate labels for your fashion images.
+        </p>
+        <p class="intro-text">
+          Using state-of-the-art machine learning models, Fashion Tagger can identify different categories, types, colors, and other attributes of fashion items, making it easier for you to organize and understand your fashion collection.
+        </p>
+        <p class="intro-text">
+          Dataset reference: <a class="highlight" href="https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset" target="_blank">Fashion Product Images Dataset</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Introduction Section -->
+  <section class="section has-background-dark">
+    <div class="container has-text-centered">
+      <h2 class="title">Meet the Creator</h2>
+      <img src="{{ url_for('static', filename='images/mahan.jpg') }}" alt="Mahan Veisi" class="profile-image">
+      <p class="intro-text">
+        Hello! I'm Mahan Veisi, a passionate AI researcher and developer. Currently pursuing a Bachelor's degree in Computer Engineering at Shahid Beheshti University. I have a strong interest in Computer Vision, Machine Learning, and Reinforcement Learning.
+      </p>
+      <p class="intro-text">
+        Feel free to connect with me on <a class="highlight" href="https://www.linkedin.com/in/mahan-veisi-427934226/" target="_blank">LinkedIn</a> or check out my work on <a class="highlight" href="https://github.com/MahanVeisi8" target="_blank">GitHub</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer has-background-black">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Fashion Tagger</strong> by <a class="highlight" href="#">Mahan Veisi</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload an Image</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+    .hero.is-primary {
+      background: linear-gradient(45deg, #ff0000, #000000);
+      color: white;
+    }
+    .hero-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .button.is-large {
+      margin-top: 20px;
+      background-color: #ff0000;
+      border-color: #ff0000;
+      color: white;
+    }
+    .content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .file-label {
+      background-color: #fff;
+      color: #000;
+      border-color: #ff0000;
+    }
+    .file-label .file-icon {
+      color: #ff0000;
+    }
+    .notification {
+      background-color: #ff0000;
+      color: white;
+    }
+    .steps {
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .step-item.is-active .step-marker {
+      background-color: #ff0000;
+    }
+    .step-item.is-active .step-details {
+      color: #ff0000;
+    }
+    .step-details p {
+      color: #fff;
+    }
+    .step-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-2">Upload an Image for Prediction</h1>
+        <h2 class="subtitle is-4">Get detailed labels for your fashion images</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <form method="post" enctype="multipart/form-data" id="uploadForm">
+            <div class="file has-name is-fullwidth">
+              <label class="file-label">
+                <input class="file-input" type="file" name="file" required>
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                  </span>
+                  <span class="file-label">Choose a file...</span>
+                </span>
+                <span class="file-name">No file selected</span>
+              </label>
+            </div>
+            <button class="button is-large is-fullwidth" type="submit">Upload</button>
+          </form>
+          <div class="loading-spinner" id="loadingSpinner"></div>
+        </div>
+      </div>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="notification" style="margin-top: 20px;">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">How It Works</h2>
+      <div class="steps">
+        <div class="step-item is-active">
+          <div class="step-marker"><i class="fas fa-upload"></i></div>
+          <div class="step-details">
+            <div>
+              <p class="step-title">Upload an Image</p>
+              <p>Select a fashion image from your device and upload it. Our platform supports various image formats, making it easy to get started.</p>
+            </div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-marker"><i class="fas fa-cogs"></i></div>
+          <div class="step-details">
+            <div>
+              <p class="step-title">AI Analysis</p>
+              <p>Our AI model analyzes the image and identifies various fashion items and their attributes. The analysis is quick and highly accurate.</p>
+            </div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-marker"><i class="fas fa-eye"></i></div>
+          <div class="step-details">
+            <div>
+              <p class="step-title">View Results</p>
+              <p>Get detailed labels for the items in your image, including category, type, color, and more. The results are displayed clearly for easy understanding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Explanation Section -->
+  <section class="section has-background-dark">
+    <div class="container">
+      <h2 class="title has-text-centered">Project Explanation</h2>
+      <div class="content">
+        <p>
+          Our Fashion Tagger project leverages state-of-the-art machine learning models to analyze and label fashion items in images. 
+          The project involves several steps, including data preparation, transformation, model training, and evaluation. 
+          We use a diverse dataset of fashion images to train our models, ensuring high accuracy and robustness.
+        </p>
+        <p>
+          The preprocessing steps include data cleaning, one-hot encoding of labels, and image transformations. 
+          We then train a custom ensemble model combining EfficientNet, ResNet, and MobileNet architectures. 
+          The model is fine-tuned and evaluated on a validation set to ensure optimal performance.
+        </p>
+        <p>
+          For a detailed overview of the project, you can check out the complete project code and documentation on Colab:
+          <a class="highlight" href="https://colab.research.google.com/drive/1gDgDjP37RGlMNYUoeJy1zH31y5F4baZR?usp=sharing" target="_blank">Fashion Product Image Classification Project</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer has-background-black">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Fashion Tagger</strong> by <a class="highlight" href="#"> Mahan Veisi.</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
