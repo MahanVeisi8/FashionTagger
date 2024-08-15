@@ -1,41 +1,14 @@
 # **Fashion Tagger: AI-Powered Fashion Image Labeling**
 
-### Dataset Explanation
+## Dataset Explanation
 
 Fashion Tagger uses the **Fashion Product Images Dataset** from Kaggle, which contains over 44,000 fashion product images with detailed labels such as category, color, and season. This dataset is crucial for training our AI model to accurately predict fashion item attributes.
 
 - **Dataset Source**: [Fashion Product Images Dataset on Kaggle](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset).
 
-### Project Overview
+## Project Overview
 
 Fashion Tagger is a web application that classifies fashion items using an AI model trained on the Kaggle dataset. The model, built using an ensemble of CNNs, predicts labels like category and color for each uploaded image. The application provides an intuitive interface for users to interact with the model, making AI-powered fashion labeling accessible and easy to use.
-
-## **Features**
-- **Image Upload**: Users can upload images of fashion items.
-- **Label Prediction**: The AI model predicts and displays multiple labels for each uploaded image.
-- **User-Friendly Interface**: The application provides a simple and intuitive interface for interacting with the model.
-
-## **Project Structure**
-
-Here’s an overview of the project’s directory structure:
-```
-FASHION_PROJECT/
-│
-├── instance/                      # Instance configurations (if applicable)
-├── static/
-│   ├── css/                       # Stylesheets
-│   ├── images/                    # Image assets
-│   └── js/                        # JavaScript files
-├── templates/
-│   ├── index.html                 # Home page template
-│   ├── upload.html                # Upload page template
-│   └── result.html                # Result page template
-├── uploads/                       # Directory for uploaded images
-├── app.py                         # Main Flask application script
-├── best_model-epoch=...           # Model checkpoint files
-├── label_dicts.pkl                # Label dictionary used by the model
-└── none_label_mask.pkl            # Mask information for labels
-```
 
 ## **Quick Start Guide**
 
