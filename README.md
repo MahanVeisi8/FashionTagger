@@ -64,23 +64,16 @@ The frontend is designed to provide a user-friendly interface for interacting wi
 
 ## Future Work and Enhancements
 
-1. **Integration of Advanced Pretrained Models:**
-   To enhance the accuracy and robustness of Fashion Tagger, the next step involves integrating state-of-the-art foundation models. These models, trained on massive datasets, have demonstrated superior performance in various vision tasks. By fine-tuning them on our fashion dataset, we aim to significantly boost the prediction accuracy. Examples of such models include:
-   - **CLIP (Contrastive Language–Image Pretraining)** by OpenAI
-   - **Vision Transformer (ViT)** by Google
-   - **DINO (Self-Distillation with No Labels)** by Meta (Facebook AI)
+1. **Foundation Models Integration:**
+   Enhance accuracy by fine-tuning advanced pretrained models like **CLIP** (OpenAI), **ViT** (Google), and **DINO** (Meta) on our dataset for superior label prediction.
 
 2. **Production Deployment:**
-   - **Cloud Deployment**: Deploying the Fashion Tagger application on cloud platforms such as AWS, Google Cloud, or Microsoft Azure to make it accessible to a wider audience.
-   - **Dockerization**: Containerizing the application using Docker to ensure consistent and reliable deployment across various environments.
+   - **Cloud Hosting**: Deploy on AWS, Google Cloud, or Azure for broader access.
+   - **Dockerization**: Use Docker for consistent and scalable deployments.
 
-3. **Model and Feature Optimization:**
-   - **Optimized Image Processing**: Improving the image processing pipeline to handle larger batches and higher resolution inputs efficiently.
-   - **User Feedback Integration**: Adding a mechanism for users to provide feedback on the predicted labels, which can be used to further refine and improve the model over time.
-
-4. **Image Generation and Suggestion Using GANs:**
-   - **Generative Adversarial Networks (GANs)**: Implementing GANs to generate new fashion images based on specific attributes or styles, allowing for creative design suggestions.
-   - **Similar Image Suggestion**: Developing a feature that, upon receiving an image, suggests visually similar images or products, enhancing the user experience and providing more options for fashion discovery.
+3. **GANs for Image Generation and Suggestions:**
+   - **Image Generation**: Implement GANs to create new fashion images based on desired attributes.
+   - **Similar Image Suggestions**: Suggest visually similar products to enhance user experience.
 
 
 ## **License**
