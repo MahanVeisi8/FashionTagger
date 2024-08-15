@@ -27,6 +27,30 @@ python app.py
 ### **Accessing the Application**
 Once the application is running, you can access it via your web browser at `http://localhost:5000`.
 
+## **Project Architecture**
+
+Fashion Tagger is a multi-layered project, consisting of data preprocessing and model training, followed by the development of a web application that serves as the interface for the AI model. Here's a brief overview of each layer:
+
+### **1. Data Preprocessing and Model Training**
+The first layer involves data preprocessing and training the AI model. The **Fashion Product Images Dataset** is cleaned, and labels are encoded using one-hot encoding. The images are then transformed and augmented to enhance the model's learning. The model itself is an ensemble of convolutional neural networks (CNNs) including EfficientNet, ResNet, and MobileNet, which have been fine-tuned for optimal performance.
+
+For a detailed explanation of this process, including code and experiments, please refer to the [Model Training and Preprocessing Documentation](link-to-detailed-training-readme).
+
+### **2. Application Structure**
+
+#### **Backend**
+The backend of the Fashion Tagger application is built using Flask, a lightweight web framework for Python. It handles the following key tasks:
+- **Model Inference**: Once an image is uploaded, the backend preprocesses the image and uses the trained model to generate predictions.
+- **Routing and API Management**: Flask manages the routes that connect the frontend to the backend, handling user requests and returning the predicted labels.
+- **File Handling**: Uploaded images are temporarily stored, and their predictions are linked for easy access and display.
+
+#### **Frontend**
+The frontend is designed to provide a user-friendly interface for interacting with the model. It includes:
+- **HTML/CSS/JavaScript**: The static pages are built using HTML for structure, CSS for styling, and JavaScript for dynamic elements.
+- **Responsive Design**: The frontend uses the Bulma CSS framework to ensure that the application is responsive and accessible on different devices.
+- **User Interaction**: The frontend allows users to easily upload images and view the predictions in a clear and visually appealing manner.
+
+
 ## **Preview of Application Pages**
 
 Here are previews of the key pages in the application:
