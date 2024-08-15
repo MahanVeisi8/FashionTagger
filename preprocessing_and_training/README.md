@@ -14,6 +14,12 @@ The code is designed to run in a Python environment with essential machine learn
 
 ## **Data Preparation**
 
+### **Data Collection**
+
+To ensure the highest quality and accuracy in fashion image classification, we utilized the full **Fashion Product Images Dataset** from Kaggle, which includes over 44,000 images. Unlike the smaller, compressed version, this full dataset (25 GB) offers high-resolution images that are essential for accurately detecting attributes such as colors and fine details in fashion items.
+
+Given the dataset's large size, processing was performed on Google Colab Pro with T4 GPU support, ensuring sufficient disk space and processing power for efficient handling and accelerated model training.
+
 ### **Loading and Cleaning Data**
 The dataset is loaded and cleaned to ensure that all images have corresponding labels and are in the correct format for model training. Rare labels are replaced or removed to maintain the dataset's consistency.
 
