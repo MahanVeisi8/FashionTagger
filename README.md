@@ -57,64 +57,14 @@ The frontend is designed to provide a user-friendly interface for interacting wi
 - **User Interaction**: The frontend allows users to easily upload images and view the predictions in a clear and visually appealing manner.
 
 
-## **Preview of Application Pages**
+## Application Demonstration
 
-Here are previews of the key pages in the application:
+![Fashion Tagger Demo](path_to_your_gif.gif)
 
-### **1. Home Page (index.html)**
-This is the landing page where users are welcomed and can start the process by clicking "Get Started."
-
-![Home Page](path/to/first-image.png)
-
-![About Section](path/to/second-image.png)
-
-![Creator Info](path/to/third-image.png)
-
-### **2. Upload Page (upload.html)**
-This page allows users to upload their fashion images for prediction.
-
-![Upload Page](path/to/fourth-image.png)
-
-![How It Works Section](path/to/fifth-image.png)
-
-![Project Explanation](path/to/sixth-image.png)
-
-### **3. Result Page (result.html)**
-After uploading an image, users are redirected here to see the predicted labels.
-
-![Prediction Result](path/to/seventh-image.png)
-
-![Detailed Labels](path/to/eighth-image.png)
-
-> **Note**: Replace `path/to/your-image.png` with the actual path or URL where the images are stored in your repository.
-
-## **Dataset Explanation**
-
-The model is trained on the [Fashion Product Images Dataset](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset). This dataset contains thousands of images labeled with categories, subcategories, colors, and other fashion-related attributes. The dataset was preprocessed by resizing images and normalizing pixel values.
-
-## **Model Training**
-
-The machine learning model used in this project is an ensemble of EfficientNet, ResNet, and MobileNet architectures. The training process involved several steps, including data augmentation, stratified sampling, and extensive hyperparameter tuning. For a detailed explanation of the model training, refer to the `preprocess_and_train` directory.
-
-## **Application Workflow**
-
-### **Backend**
-The backend is built using Flask, which handles routing, file uploads, and serving the AI model for inference. The model is loaded and served using PyTorch, and predictions are made based on the uploaded images.
-
-### **Frontend**
-The frontend is designed using HTML, CSS, and JavaScript, ensuring a responsive and visually appealing user interface. The front end provides an intuitive user experience, guiding users from image upload to viewing prediction results.
-
-## **Application Performance**
-
-Fashion Tagger accurately predicts labels for various fashion items, demonstrating the effectiveness of the underlying AI model. Below is a summary of the application’s performance:
-
-- **Prediction Accuracy**: High accuracy across multiple fashion categories.
-- **Speed**: Real-time predictions for each uploaded image.
 
 ## **Future Work and Enhancements**
 
-- **Model Improvement**: Further fine-tune the model to increase prediction accuracy.
-- **Dataset Expansion**: Incorporate more diverse fashion datasets to improve model robustness.
+- **Model Improvement**: 
 - **Production Deployment**: Explore options for deploying the application using cloud services or Docker.
 
 ## **License**
