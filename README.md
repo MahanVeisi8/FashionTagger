@@ -1,2 +1,139 @@
-# FashionTagger
-Upload your fashion images and get detailed labels predicted by my AI model.
+# **Fashion Tagger: AI-Powered Fashion Image Labeling**
+
+Fashion Tagger is an AI-powered application designed to help you identify and label various fashion items in images. Leveraging state-of-the-art machine learning models, this project classifies fashion products into different categories, types, colors, and more, providing detailed labels for fashion images.
+
+## **Table of Contents**
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Quick Start Guide](#quick-start-guide)
+- [Preview of Application Pages](#preview-of-application-pages)
+- [Dataset Explanation](#dataset-explanation)
+- [Model Training](#model-training)
+- [Application Workflow](#application-workflow)
+- [Application Performance](#application-performance)
+- [Future Work and Enhancements](#future-work-and-enhancements)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Contact Information](#contact-information)
+
+## **Project Overview**
+
+Fashion Tagger is a web application built using Flask and PyTorch. The core of the project is a machine learning model that predicts various labels for fashion items, such as category, color, and usage. This project demonstrates how to integrate an AI model into a user-friendly web application that can be used by fashion enthusiasts, bloggers, and anyone interested in fashion product classification.
+
+## **Features**
+- **Image Upload**: Users can upload images of fashion items.
+- **Label Prediction**: The AI model predicts and displays multiple labels for each uploaded image.
+- **User-Friendly Interface**: The application provides a simple and intuitive interface for interacting with the model.
+
+## **Project Structure**
+
+Here’s an overview of the project’s directory structure:
+```
+FASHION_PROJECT/
+│
+├── instance/                      # Instance configurations (if applicable)
+├── static/
+│   ├── css/                       # Stylesheets
+│   ├── images/                    # Image assets
+│   └── js/                        # JavaScript files
+├── templates/
+│   ├── index.html                 # Home page template
+│   ├── upload.html                # Upload page template
+│   └── result.html                # Result page template
+├── uploads/                       # Directory for uploaded images
+├── app.py                         # Main Flask application script
+├── best_model-epoch=...           # Model checkpoint files
+├── label_dicts.pkl                # Label dictionary used by the model
+└── none_label_mask.pkl            # Mask information for labels
+```
+
+## **Quick Start Guide**
+
+### **Environment Setup**
+Ensure you have Python 3.8+ installed. Set up your environment and install dependencies using:
+```bash
+pip install flask torch torchvision timm joblib pytorch-lightning
+```
+
+### **Running the Application**
+To run the Flask application locally:
+```bash
+python app.py
+```
+
+### **Accessing the Application**
+Once the application is running, you can access it via your web browser at `http://localhost:5000`.
+
+## **Preview of Application Pages**
+
+Here are previews of the key pages in the application:
+
+### **1. Home Page (index.html)**
+This is the landing page where users are welcomed and can start the process by clicking "Get Started."
+
+![Home Page](path/to/first-image.png)
+
+![About Section](path/to/second-image.png)
+
+![Creator Info](path/to/third-image.png)
+
+### **2. Upload Page (upload.html)**
+This page allows users to upload their fashion images for prediction.
+
+![Upload Page](path/to/fourth-image.png)
+
+![How It Works Section](path/to/fifth-image.png)
+
+![Project Explanation](path/to/sixth-image.png)
+
+### **3. Result Page (result.html)**
+After uploading an image, users are redirected here to see the predicted labels.
+
+![Prediction Result](path/to/seventh-image.png)
+
+![Detailed Labels](path/to/eighth-image.png)
+
+> **Note**: Replace `path/to/your-image.png` with the actual path or URL where the images are stored in your repository.
+
+## **Dataset Explanation**
+
+The model is trained on the [Fashion Product Images Dataset](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset). This dataset contains thousands of images labeled with categories, subcategories, colors, and other fashion-related attributes. The dataset was preprocessed by resizing images and normalizing pixel values.
+
+## **Model Training**
+
+The machine learning model used in this project is an ensemble of EfficientNet, ResNet, and MobileNet architectures. The training process involved several steps, including data augmentation, stratified sampling, and extensive hyperparameter tuning. For a detailed explanation of the model training, refer to the `preprocess_and_train` directory.
+
+## **Application Workflow**
+
+### **Backend**
+The backend is built using Flask, which handles routing, file uploads, and serving the AI model for inference. The model is loaded and served using PyTorch, and predictions are made based on the uploaded images.
+
+### **Frontend**
+The frontend is designed using HTML, CSS, and JavaScript, ensuring a responsive and visually appealing user interface. The front end provides an intuitive user experience, guiding users from image upload to viewing prediction results.
+
+## **Application Performance**
+
+Fashion Tagger accurately predicts labels for various fashion items, demonstrating the effectiveness of the underlying AI model. Below is a summary of the application’s performance:
+
+- **Prediction Accuracy**: High accuracy across multiple fashion categories.
+- **Speed**: Real-time predictions for each uploaded image.
+
+## **Future Work and Enhancements**
+
+- **Model Improvement**: Further fine-tune the model to increase prediction accuracy.
+- **Dataset Expansion**: Incorporate more diverse fashion datasets to improve model robustness.
+- **Production Deployment**: Explore options for deploying the application using cloud services or Docker.
+
+## **License**
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## **Acknowledgments**
+
+- **Dataset**: [Fashion Product Images Dataset](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset)
+- **Frameworks**: Flask, PyTorch, PyTorch Lightning, Timm
+
+## **Contact Information**
+
+Created by Mahan Veisi - [LinkedIn](https://www.linkedin.com/in/mahan-veisi-427934226/) - [GitHub](https://github.com/MahanVeisi8)
