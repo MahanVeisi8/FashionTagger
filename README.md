@@ -1,25 +1,14 @@
 # **Fashion Tagger: AI-Powered Fashion Image Labeling**
 
-Fashion Tagger is an AI-powered application designed to help you identify and label various fashion items in images. Leveraging state-of-the-art machine learning models, this project classifies fashion products into different categories, types, colors, and more, providing detailed labels for fashion images.
+### Dataset Explanation
 
-## **Table of Contents**
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Quick Start Guide](#quick-start-guide)
-- [Preview of Application Pages](#preview-of-application-pages)
-- [Dataset Explanation](#dataset-explanation)
-- [Model Training](#model-training)
-- [Application Workflow](#application-workflow)
-- [Application Performance](#application-performance)
-- [Future Work and Enhancements](#future-work-and-enhancements)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-- [Contact Information](#contact-information)
+Fashion Tagger uses the **Fashion Product Images Dataset** from Kaggle, which contains over 44,000 fashion product images with detailed labels such as category, color, and season. This dataset is crucial for training our AI model to accurately predict fashion item attributes.
 
-## **Project Overview**
+- **Dataset Source**: [Fashion Product Images Dataset on Kaggle](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset).
 
-Fashion Tagger is a web application built using Flask and PyTorch. The core of the project is a machine learning model that predicts various labels for fashion items, such as category, color, and usage. This project demonstrates how to integrate an AI model into a user-friendly web application that can be used by fashion enthusiasts, bloggers, and anyone interested in fashion product classification.
+### Project Overview
+
+Fashion Tagger is a web application that classifies fashion items using an AI model trained on the Kaggle dataset. The model, built using an ensemble of CNNs, predicts labels like category and color for each uploaded image. The application provides an intuitive interface for users to interact with the model, making AI-powered fashion labeling accessible and easy to use.
 
 ## **Features**
 - **Image Upload**: Users can upload images of fashion items.
