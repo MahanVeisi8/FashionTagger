@@ -1,35 +1,16 @@
 # **Fashion Tagger: ML Model for Multi-Label Fashion Classification**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_colab_link_here)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OcDUrJpxSpI-p2jbxc9P0KaU_3wgtvIK?usp=sharing)
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-1.8.0-orange)
 ![Status](https://img.shields.io/badge/status-active-green)
 
-This repository documents the end-to-end process of building a multi-label classification model for fashion products. The project leverages PyTorch and PyTorch Lightning to train a model capable of predicting multiple labels for each fashion image, such as category, color, season, and more.
+## Setup
 
-## **Table of Contents**
+**Running the Notebook in Google Colab**
+- The notebook is designed for easy execution in Google Colab, requiring no additional setup other than a Google account and internet access.😊
 
-- [Introduction](#introduction)
-- [Setup](#setup)
-- [Data Preparation](#data-preparation)
-- [Model Training](#model-training)
-- [Evaluation](#evaluation)
-- [Results](#results)
-
-## **Introduction**
-
-Fashion Tagger is designed to classify fashion items using a multi-label approach. The model is trained on the **Fashion Product Images Dataset** from Kaggle, which contains over 44,000 images with multiple labels describing each product. This project demonstrates the integration of AI in fashion, enabling automated and accurate tagging of fashion items.
-
-## **Setup**
-
-### **Environment Setup**
-To run the notebook locally, ensure you have Python 3.8+ installed. You can set up the environment and install necessary dependencies with:
-
-```bash
-pip install torch torchvision pytorch-lightning timm joblib
-```
-
-You can also run the project directly in Google Colab with all dependencies pre-installed.
+The code is designed to run in a Python environment with essential machine learning and simulation libraries. You can execute the notebook directly in Google Colab using the badge link provided, which includes a pre-configured environment with all necessary dependencies.
 
 ## **Data Preparation**
 
