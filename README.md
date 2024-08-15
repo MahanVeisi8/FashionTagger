@@ -9,8 +9,8 @@ Fashion Tagger uses the **Fashion Product Images Dataset** from Kaggle, which co
 ## Project Overview
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="path_to_your_image1.png" alt="Home Page Screenshot" style="width: 48%;">
-  <img src="path_to_your_image2.png" alt="Home Page Overview" style="width: 48%;">
+  <img src="img/1.png" alt="Home Page Screenshot" style="width: 48%;">
+  <img src="img/2.png" alt="Home Page Overview" style="width: 48%;">
 </div>
 
 Fashion Tagger is a web application that classifies fashion items using an AI model trained on the Kaggle dataset. The model, built using an ensemble of CNNs, predicts labels like category and color for each uploaded image. The application provides an intuitive interface for users to interact with the model, making AI-powered fashion labeling accessible and easy to use.
