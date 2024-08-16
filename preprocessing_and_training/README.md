@@ -84,32 +84,16 @@ Below is a visual representation of a batch of images after transformation:
 
 ### **Label Mapping and Handling 'None' Classes**
 
-For each image, we saved a dictionary of label mappings that assigned each category a specific position in the one-hot encoded vector. This mapping was crucial for decoding predictions and interpreting model outputs.
+We created a dictionary of label mappings to assign each category a specific position in the one-hot encoded vectors, which was crucial for decoding predictions and interpreting model outputs.
 
-As part of our strategy to manage imbalanced classes, we also created a mask for the 'None' labels. This mask was used during the loss calculation to ensure that 'None' labels (which represented less significant or 'other' categories) were not penalized during training. This approach allowed the model to focus on learning the more critical labels, improving overall performance and generalization.
+To manage imbalanced classes, we created a mask for the 'None' labels, ensuring they were excluded from the loss calculation. This allowed the model to focus on learning more critical labels, improving its overall performance.
 
-The following is an example of a label vector for a single image:
+Below is an example of a label vector for a single image and its corresponding mask:
 
-```
-Raw class labels for the first image in the batch:
-tensor([0., 0., 1., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-        0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-        0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0.,
-        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0.,
-        1., 0., 0., 0., 0.], dtype=torch.float64)
-```
+| **Label Vector**                                                                                     | **None Label Mask**                                                                                 |
+|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| `tensor([0., 0., 1., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1., 0., 0., 0., 0.], dtype=torch.float64)` | `tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 0., 1., 1., 1., 1., 0.])` |
 
-The mask for 'None' labels ensured that these classes were handled appropriately during training, as illustrated by the following example:
-
-```
-tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1.,
-        1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1.,
-        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 0., 1., 1.,
-        1., 1., 0.])
-```
-
-This careful handling of the dataset and transformation process set the foundation for robust model training and accurate predictions.
 
 
 ## **Model Training**
