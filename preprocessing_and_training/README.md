@@ -95,25 +95,23 @@ Below is an example of a label vector for a single image and its corresponding m
 | `tensor([0., 0., 1., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1., 0., 0., 0., 0.], dtype=torch.float64)` | `tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 0., 1., 1., 1., 1., 0.])` |
 
 
+## **Model Definition and Training**
 
-## **Model Training**
+We developed an ensemble model combining **EfficientNet-B3**, **ResNet50**, and **MobileNetV3** to leverage the strengths of each architecture in feature extraction.
 
-### **Model Architecture**
-The model is based on an EfficientNet-B3 backbone, fine-tuned for our multi-label classification task. The architecture includes custom classifier layers designed to output predictions across multiple labels.
+![Model Architecture](img/model.pdf)
 
-### **Training Process**
-The training process is managed with PyTorch Lightning, incorporating:
-- **Early Stopping**: To avoid overfitting.
-- **Learning Rate Scheduling**: For optimal convergence.
-- **Checkpointing**: To save the best model based on validation performance.
+**Key Features:**
+- **Ensemble Architecture**: Features from the three base models are concatenated and passed through a custom fully connected layer to produce final predictions.
+- **Loss Calculation**: Binary Cross-Entropy with Logits Loss was used, excluding 'None' labels to focus on significant categories.
+- **Regularization**: Employed **Dropout** and **ReLU** activation in the final layers to prevent overfitting.
 
-```python
-trainer = pl.Trainer(max_epochs=80, accelerator='gpu', devices=1)
-trainer.fit(model, train_loader, val_loader)
-```
+**Training Configurations:**
+- **Early Stopping**: Training halts after 20 epochs of no improvement in validation loss.
+- **Gradient Clipping**: Applied with a value of 0.5 to maintain stable training.
 
-### **Monitoring and Logging**
-Training progress is logged with TensorBoard, allowing for real-time monitoring of metrics such as loss and accuracy.
+This setup allows the model to generalize well while efficiently handling the complexity of multi-label classification.
+ is logged with TensorBoard, allowing for real-time monitoring of metrics such as loss and accuracy.
 
 ## **Evaluation**
 
