@@ -1,11 +1,5 @@
 # **Fashion Tagger: AI-Powered Fashion Image Labeling**
 
-## Dataset Explanation
-
-Fashion Tagger uses the **Fashion Product Images Dataset** from Kaggle, which contains over 44,000 fashion product images with detailed labels such as category, color, and season. This dataset is crucial for training our AI model to accurately predict fashion item attributes.
-
-- **Dataset Source**: [Fashion Product Images Dataset on Kaggle](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset).
-
 ## Project Overview
 
 <div style="display: flex; justify-content: space-between;">
@@ -14,6 +8,14 @@ Fashion Tagger uses the **Fashion Product Images Dataset** from Kaggle, which co
 </div>
 
 Fashion Tagger is a web application that classifies fashion items using an AI model trained on the Kaggle dataset. The model, built using an ensemble of CNNs, predicts labels like category and color for each uploaded image. The application provides an intuitive interface for users to interact with the model, making AI-powered fashion labeling accessible and easy to use.
+
+## Dataset Explanation
+
+Fashion Tagger uses the **Fashion Product Images Dataset** from Kaggle, which contains over 44,000 fashion product images with detailed labels such as category, color, and season. This dataset is crucial for training our AI model to accurately predict fashion item attributes.
+
+- **Dataset Source**: [Fashion Product Images Dataset on Kaggle](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset).
+
+
 
 
 ## **Quick Start Guide**
