@@ -72,7 +72,7 @@ The frontend is designed to provide a user-friendly interface for interacting wi
 </div>
 
 **Performance Video:**
-![Fashion Tagger Demo](per.gif)
+![App Performance](img/per.gif)
 
 
 ## Future Work and Enhancements
