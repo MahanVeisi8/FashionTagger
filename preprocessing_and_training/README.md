@@ -99,7 +99,7 @@ Below is an example of a label vector for a single image and its corresponding m
 
 We developed an ensemble model combining **EfficientNet-B3**, **ResNet50**, and **MobileNetV3** to leverage the strengths of each architecture in feature extraction.
 
-![Model Architecture](img/model.pdf)
+![Model Architecture](img/model.png)
 
 **Key Features:**
 - **Ensemble Architecture**: Features from the three base models are concatenated and passed through a custom fully connected layer to produce final predictions.
