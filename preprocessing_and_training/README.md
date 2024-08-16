@@ -143,15 +143,24 @@ The F1 score, which combines precision and recall, was calculated for each label
 
 Below is the class-wise F1 score breakdown for both training and validation sets, illustrating the model's precision and recall performance across different labels.
 
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-    <div><img src="img/gender_f1.png" alt="Gender F1 Score" style="width: 100%; height: auto;"></div>
-    <div><img src="img/mastercategory_f1.png" alt="MasterCategory F1 Score" style="width: 100%; height: auto;"></div>
-    <div><img src="img/subcategory_f1.png" alt="SubCategory F1 Score" style="width: 100%; height: auto;"></div>
-    <div><img src="img/articletype_f1.png" alt="ArticleType F1 Score" style="width: 100%; height: auto;"></div>
-    <div><img src="img/basecolour_f1.png" alt="BaseColour F1 Score" style="width: 100%; height: auto;"></div>
-    <div><img src="img/season_f1.png" alt="Season F1 Score" style="width: 100%; height: auto;"></div>
-    <div><img src="img/usage_f1.png" alt="Usage F1 Score" style="width: 100%; height: auto;"></div>
-</div>
+<table>
+  <tr>
+    <td><img src="img/gender_f1.png" alt="Gender F1 Score" style="width: 100%; height: auto;"></td>
+    <td><img src="img/mastercategory_f1.png" alt="MasterCategory F1 Score" style="width: 100%; height: auto;"></td>
+    <td><img src="img/subcategory_f1.png" alt="SubCategory F1 Score" style="width: 100%; height: auto;"></td>
+  </tr>
+  <tr>
+    <td><img src="img/articletype_f1.png" alt="ArticleType F1 Score" style="width: 100%; height: auto;"></td>
+    <td><img src="img/basecolour_f1.png" alt="BaseColour F1 Score" style="width: 100%; height: auto;"></td>
+    <td><img src="img/season_f1.png" alt="Season F1 Score" style="width: 100%; height: auto;"></td>
+  </tr>
+  <tr>
+    <td><img src="img/usage_f1.png" alt="Usage F1 Score" style="width: 100%; height: auto;"></td>
+    <td></td> <!-- Empty cell -->
+    <td></td> <!-- Empty cell -->
+  </tr>
+</table>
+
 
 
 **Brief Analysis**:
