@@ -71,10 +71,9 @@ The frontend is designed to provide a user-friendly interface for interacting wi
   <img src="img/4.png" alt="Home Page Overview" style="width: 48%;">
 </div>
 
-<div style="display: flex;">
-  <img src="img/per.gif" alt="Home Page Screenshot" style="width: 500%;">
+<div style="text-align: center;">
+  <img src="img/per.gif" alt="App Performance" style="width: 100%; height: auto;">
 </div>
-
 
 ## Future Work and Enhancements
 
