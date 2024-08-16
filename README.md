@@ -72,7 +72,7 @@ The frontend is designed to provide a user-friendly interface for interacting wi
 </div>
 
 <div style="text-align: center;">
-  <img src="img/per.gif" alt="App Performance" style="width: 100%; height: auto;">
+  <img src="img/per.gif" alt="App Performance" style="width: 120%; height: auto;">
 </div>
 
 ## Future Work and Enhancements
