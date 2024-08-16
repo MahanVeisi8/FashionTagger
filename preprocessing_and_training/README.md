@@ -20,11 +20,42 @@ To ensure the highest quality and accuracy in fashion image classification, we u
 
 Given the dataset's large size, processing was performed on Google Colab Pro with T4 GPU support, ensuring sufficient disk space and processing power for efficient handling and accelerated model training.
 
-### **Loading and Cleaning Data**
-The dataset is loaded and cleaned to ensure that all images have corresponding labels and are in the correct format for model training. Rare labels are replaced or removed to maintain the dataset's consistency.
 
-### **One-Hot Encoding and Stratification**
-The categorical data is one-hot encoded, and the dataset is split into training and validation sets with stratification to ensure balanced distribution of labels.
+
+
+
+### **Dataset Overview and Initial Setup**
+
+After obtaining the full Fashion Product Images Dataset, we loaded the dataset into a Pandas DataFrame, ensuring that all image paths and associated metadata were correctly mapped. Below is a preview of the dataset:
+
+![Dataset Overview](image1.png)
+
+Given the vast amount of data, it was crucial to verify and clean the dataset to ensure the integrity of our analysis.
+
+### **Dataset Cleaning**
+
+To ensure that our dataset was both complete and accurate, we implemented a cleaning process to remove any entries with missing images. This step was necessary to avoid potential issues during the training phase. After cleaning, the dataset shape was adjusted accordingly, ensuring only valid data was retained.
+
+### **Dataset Analysis**
+
+We performed a thorough analysis of the dataset to understand its structure. This included checking for null values, counting unique values in each categorical column, and reviewing the overall distribution of labels. Below, you can see the unique values across different categories such as gender, masterCategory, subCategory, and others.
+
+We found that the dataset had an imbalance in certain classes, with some categories having significantly fewer samples. This imbalance could potentially affect the model's performance.
+
+### **Handling Imbalanced Data**
+
+Given the imbalance, we decided to handle classes with fewer than 500 samples by relabeling them as 'None', effectively treating them as a generic "other" category. This approach allowed us to retain as much data as possible while avoiding the challenges of training on extremely small class sizes. This process reduced the risk of overfitting to rare classes and ensured a more robust model.
+
+![Class Imbalance Visualization](image2.png)
+
+### **Image ID Preparation and Visualization**
+
+To match image IDs with their filenames, we appended the `.jpg` extension to each image ID. We then visualized a sample of images along with their labels to confirm the integrity and quality of our dataset, ensuring that the labels were correctly aligned with the images.
+
+
+
+
+
 
 ### **Image Transformation**
 Images undergo transformation and augmentation to improve model generalization, with transformations including resizing, normalization, and augmentation.
