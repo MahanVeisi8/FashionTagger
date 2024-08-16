@@ -25,7 +25,7 @@ Given the dataset's large size, processing was performed on Google Colab Pro wit
 
 After obtaining the full Fashion Product Images Dataset, we loaded the dataset labels into a Pandas DataFrame, ensuring that all image paths and associated metadata were correctly mapped. Below is a preview of them:
 
-![Dataset labels Overview](1.png)
+![Dataset labels Overview](img/1.png)
 
 ### **Dataset Cleaning**
 
@@ -52,7 +52,7 @@ To address this, we decided to handle classes with fewer than 500 samples by rel
 
 Below is an example of the dataset after processing and label adjustments:
 
-![image with their labels](2.png)
+![image with their labels](img/2.png)
 
 
 ## **Model Training**
