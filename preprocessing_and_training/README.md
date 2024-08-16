@@ -55,6 +55,63 @@ Below is an example of the dataset after processing and label adjustments:
 ![image with their labels](img/2.png)
 
 
+### **Data Transformation and Encoding**
+
+After ensuring that our dataset was cleaned and balanced, we proceeded with the transformation and encoding of categorical labels. Each label was one-hot encoded across seven categories: `gender`, `masterCategory`, `subCategory`, `articleType`, `baseColour`, `season`, and `usage`. This process converted categorical labels into binary vectors, which the model could process more efficiently.
+
+To ensure fair representation of all classes during training, we implemented stratification. This technique maintained the distribution of categories across both the training and validation sets, ensuring that each class was well-represented. 
+
+Our dataset was split into training and validation sets with an 80/20 ratio, resulting in:
+
+- **Training set:** 35,749 samples
+- **Validation set:** 8,670 samples
+
+We verified the distribution of labels by plotting the distribution for both the training and validation sets. As expected, the validation set distributions closely mirrored those of the training set, demonstrating that our stratification was successful.
+
+![Label Distribution](img/3.png)
+
+### **Image Transformations and DataLoader**
+
+Given the large size of our dataset, it was crucial to implement efficient data loading. We applied image transformations including resizing, normalization, and augmentation to standardize the input images and improve model generalization. 
+
+To handle the large dataset effectively, we utilized DataLoaders, which allowed us to process data in batches rather than loading the entire dataset into memory at once. This approach was crucial for managing memory usage and speeding up training times. By leveraging all available CPU cores, we optimized data loading, reducing the time required to process each epoch.
+
+A key aspect of this setup was ensuring that the DataLoader efficiently handled batches, utilizing all available CPU cores to load data while the GPU processed the current batch. This ensured that the GPU was utilized to its fullest, minimizing idle time and maximizing training efficiency.
+
+Below is a visual representation of a batch of images after transformation:
+
+![Batch of Images](img/4.png)
+
+### **Label Mapping and Handling 'None' Classes**
+
+For each image, we saved a dictionary of label mappings that assigned each category a specific position in the one-hot encoded vector. This mapping was crucial for decoding predictions and interpreting model outputs.
+
+As part of our strategy to manage imbalanced classes, we also created a mask for the 'None' labels. This mask was used during the loss calculation to ensure that 'None' labels (which represented less significant or 'other' categories) were not penalized during training. This approach allowed the model to focus on learning the more critical labels, improving overall performance and generalization.
+
+The following is an example of a label vector for a single image:
+
+```
+Raw class labels for the first image in the batch:
+tensor([0., 0., 1., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0.,
+        1., 0., 0., 0., 0.], dtype=torch.float64)
+```
+
+The mask for 'None' labels ensured that these classes were handled appropriately during training, as illustrated by the following example:
+
+```
+tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 0., 1., 1.,
+        1., 1., 0.])
+```
+
+This careful handling of the dataset and transformation process set the foundation for robust model training and accurate predictions.
+
+
 ## **Model Training**
 
 ### **Model Architecture**
