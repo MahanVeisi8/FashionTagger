@@ -113,30 +113,63 @@ We developed an ensemble model combining **EfficientNet-B3**, **ResNet50**, and 
 This setup allows the model to generalize well while efficiently handling the complexity of multi-label classification.
  is logged with TensorBoard, allowing for real-time monitoring of metrics such as loss and accuracy.
 
+
 ## **Evaluation**
 
-### **Performance Metrics**
-The model's performance is evaluated using class-wise precision, recall, and F1-score. The results are visualized to provide insights into the model's strengths and areas for improvement.
+### **Training and Validation Performance**
 
-### **External Data Testing**
-The model is tested on external images to validate its performance in real-world scenarios, with predictions being displayed alongside the images.
+We evaluated the model using the training and validation datasets to ensure robust performance. The training and validation accuracy reached approximately **95%**, demonstrating no signs of overfitting. This high accuracy indicates the model's ability to generalize well across unseen data.
 
-## **Results**
+![Training and Validation Metrics](img/metrics.png)
 
-The final model achieves strong accuracy across all label categories, with F1-scores consistently high for primary attributes like gender, category, and color.
+### **Class-wise Performance Analysis**
 
-**Sample Predictions:**
+To gain deeper insights into the model's performance, we examined the class-wise accuracy for key categories such as gender, master category, subcategory, article type, base color, season, and usage.
 
-![Sample Prediction 1](path_to_image)
-![Sample Prediction 2](path_to_image)
+- **Gender, MasterCategory, SubCategory, and ArticleType**: These classes achieved high accuracy, indicating that the model effectively identifies these attributes in fashion items.
+- **Season and Usage**: These classes showed slightly lower accuracy, reflecting the inherent challenges in predicting these attributes.
 
-## **Future Work and Enhancements**
+![Class-wise Metrics](img/class_metrics.png)
 
-1. **Advanced Pretrained Models**: Plan to integrate foundation models like CLIP, Vision Transformer (ViT), and DINO for even higher accuracy.
-2. **Production Deployment**: Deploy the model via Docker and cloud platforms for broader accessibility.
-3. **Image Generation with GANs**: Introduce a GAN-based feature to generate and suggest fashion images based on user input.
+### **F1 Score Analysis**
 
-## **Contributing**
+The F1 score, which combines precision and recall, was calculated for each label within the classes. The formula used for F1 score is:
 
-Contributions are welcome! Please submit pull requests for any improvements or bug fixes.
+\[
+\text{F1 Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+\]
 
+#### **Class-wise F1 Score Breakdown**
+
+Below is the class-wise F1 score breakdown for both training and validation sets, illustrating the model's precision and recall performance across different labels.
+
+| **Class**          | **Train F1 Score** | **Validation F1 Score** |
+|--------------------|--------------------|-------------------------|
+| Gender             | ![Gender F1 Score](img/gender_f1.png) |
+| MasterCategory     | ![MasterCategory F1 Score](img/mastercategory_f1.png) |
+| SubCategory        | ![SubCategory F1 Score](img/subcategory_f1.png) |
+| ArticleType        | ![ArticleType F1 Score](img/articletype_f1.png) |
+| BaseColour         | ![BaseColour F1 Score](img/basecolour_f1.png) |
+| Season             | ![Season F1 Score](img/season_f1.png) |
+| Usage              | ![Usage F1 Score](img/usage_f1.png) |
+
+**Brief Analysis**:
+- **Gender**: The model performs consistently well across all gender labels.
+- **MasterCategory**: High F1 scores indicate strong performance, particularly for common categories like Apparel and Accessories.
+- **SubCategory**: Most subcategories show strong F1 scores, with a few like 'Flip Flops' being slightly lower.
+- **ArticleType**: High F1 scores across various article types, except for a few outliers like 'Perfume and Body Mist.'
+- **BaseColour**: The model struggles slightly with predicting colors like 'Beige' and 'Maroon.'
+- **Season**: Prediction for 'Fall' and 'Spring' seasons is less accurate compared to 'Winter' and 'Summer.'
+- **Usage**: Consistent performance with slight challenges in predicting 'Sports' usage.
+
+### **Visual Evaluation**
+
+We compared the model's predictions with actual labels for several images from the validation set. The model's predictions aligned well with the actual labels, confirming its effectiveness.
+
+![Prediction vs Actual](img/prediction_vs_actual.png)
+
+### **Testing on External Data**
+
+To further assess the model's robustness, we tested it on external data outside the Kaggle dataset. The model demonstrated good predictive capability on new, unseen images, confirming its generalization ability.
+
+![External Data Test](img/external_test.png)
