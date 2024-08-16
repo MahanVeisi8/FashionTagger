@@ -21,44 +21,39 @@ To ensure the highest quality and accuracy in fashion image classification, we u
 Given the dataset's large size, processing was performed on Google Colab Pro with T4 GPU support, ensuring sufficient disk space and processing power for efficient handling and accelerated model training.
 
 
-
-
-
 ### **Dataset Overview and Initial Setup**
 
-After obtaining the full Fashion Product Images Dataset, we loaded the dataset into a Pandas DataFrame, ensuring that all image paths and associated metadata were correctly mapped. Below is a preview of the dataset:
+After obtaining the full Fashion Product Images Dataset, we loaded the dataset labels into a Pandas DataFrame, ensuring that all image paths and associated metadata were correctly mapped. Below is a preview of them:
 
-![Dataset Overview](image1.png)
-
-Given the vast amount of data, it was crucial to verify and clean the dataset to ensure the integrity of our analysis.
+![Dataset labels Overview](1.png)
 
 ### **Dataset Cleaning**
 
 To ensure that our dataset was both complete and accurate, we implemented a cleaning process to remove any entries with missing images. This step was necessary to avoid potential issues during the training phase. After cleaning, the dataset shape was adjusted accordingly, ensuring only valid data was retained.
 
+### **Dropping Irrelevant Columns**
+
+During our analysis, we identified two columns—`year` and `productDisplayName`—that were not suitable for prediction:
+
+- **Year**: The year column ranged between 2011 and 2017. Predicting the exact year a product was released based on its image is not logical, as many products look similar across different years.
+- **Product Name**: The `productDisplayName` column contains verbose names that do not provide useful information for image-based classification. Moreover, these names are often inconsistent and redundant with other categorical labels.
+
+Hence, these columns were dropped from further analysis to streamline the model's learning process.
+
 ### **Dataset Analysis**
 
-We performed a thorough analysis of the dataset to understand its structure. This included checking for null values, counting unique values in each categorical column, and reviewing the overall distribution of labels. Below, you can see the unique values across different categories such as gender, masterCategory, subCategory, and others.
-
-We found that the dataset had an imbalance in certain classes, with some categories having significantly fewer samples. This imbalance could potentially affect the model's performance.
+We performed a thorough analysis of the dataset to understand its structure. This included checking for null values, counting unique values in each categorical column, and reviewing the overall distribution of labels.
 
 ### **Handling Imbalanced Data**
 
-Given the imbalance, we decided to handle classes with fewer than 500 samples by relabeling them as 'None', effectively treating them as a generic "other" category. This approach allowed us to retain as much data as possible while avoiding the challenges of training on extremely small class sizes. This process reduced the risk of overfitting to rare classes and ensured a more robust model.
+We found that the dataset had an imbalance in certain classes, with some categories having significantly fewer samples. This imbalance could potentially affect the model's performance. 
 
-![Class Imbalance Visualization](image2.png)
+To address this, we decided to handle classes with fewer than 500 samples by relabeling them as 'None', effectively treating them as a generic "other" category. This approach allowed us to retain as much data as possible while avoiding the challenges of training on extremely small class sizes. This process reduced the risk of overfitting to rare classes and ensured a more robust model.
 
-### **Image ID Preparation and Visualization**
+Below is an example of the dataset after processing and label adjustments:
 
-To match image IDs with their filenames, we appended the `.jpg` extension to each image ID. We then visualized a sample of images along with their labels to confirm the integrity and quality of our dataset, ensuring that the labels were correctly aligned with the images.
+![image with their labels](2.png)
 
-
-
-
-
-
-### **Image Transformation**
-Images undergo transformation and augmentation to improve model generalization, with transformations including resizing, normalization, and augmentation.
 
 ## **Model Training**
 
