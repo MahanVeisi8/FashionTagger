@@ -72,7 +72,7 @@ The frontend is designed to provide a user-friendly interface for interacting wi
 </div>
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="img/per.gif" alt="Home Page Screenshot" style="width: 100%;">
+  <img src="img/per.gif" alt="Home Page Screenshot" style="width: 250%;">
 </div>
 
 - ![App Performance](img/per.gif)
