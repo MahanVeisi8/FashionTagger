@@ -63,7 +63,12 @@ The frontend is designed to provide a user-friendly interface for interacting wi
 
 ## Application Demonstration
 
-![Fashion Tagger Demo](path_to_your_gif.gif)
+<div style="display: flex; justify-content: space-between;">
+  <img src="img/3.png" alt="Home Page Screenshot" style="width: 48%;">
+  <img src="img/4.png" alt="Home Page Overview" style="width: 48%;">
+</div>
+
+![Fashion Tagger Demo](per.gif)
 
 
 ## Future Work and Enhancements
