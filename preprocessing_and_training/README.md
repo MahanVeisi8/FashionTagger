@@ -1,9 +1,17 @@
 # **Fashion Tagger: ML Model for Multi-Label Fashion Classification**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OcDUrJpxSpI-p2jbxc9P0KaU_3wgtvIK?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gDgDjP37RGlMNYUoeJy1zH31y5F4baZR?usp=sharing)
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-1.8.0-orange)
 ![Status](https://img.shields.io/badge/status-active-green)
+
+## **Introduction**
+
+The Fashion Tagger is a machine learning model developed for multi-label fashion classification, capable of accurately tagging various attributes of fashion items such as gender, master category, subcategory, article type, base color, season, and usage. Leveraging an ensemble of state-of-the-art deep learning architectures—**EfficientNet-B3**, **ResNet50**, and **MobileNetV3**—this model combines the strengths of each to enhance feature extraction and classification performance.
+
+With the increasing demand for automated fashion item tagging in e-commerce and retail, this model aims to provide a scalable and accurate solution. By using the comprehensive **Fashion Product Images Dataset** from Kaggle, which includes over 44,000 high-resolution images, the model has been trained to recognize fine-grained details, making it a powerful tool for real-world applications.
+
+This README outlines the process from data preparation and model training to evaluation, demonstrating how the model achieves high accuracy across multiple labels and generalizes well to unseen data.
 
 ## Setup
 
