@@ -42,7 +42,9 @@ Fashion Tagger is a multi-layered project, consisting of data preprocessing and 
 
 
 ### **1. Data Preprocessing and Model Training**
-The first layer involves data preprocessing and training the AI model. **✨ Interested in the magic behind the scenes?** Check out our detailed [Model Training and Preprocessing Documentation](preprocessing_and_training) to dive deep into how we prepared the data and trained our ensemble model, combining **EfficientNet-B3**, **ResNet50**, and **MobileNetV3** architectures for top-notch accuracy.
+The first layer involves data preprocessing and training the AI model.
+**✨ Interested in the magic behind the scenes?** Check out our detailed [Model Training and Preprocessing Documentation](preprocessing_and_training) to dive deep into how we prepared the data and trained our ensemble model, combining **EfficientNet-B3**, **ResNet50**, and **MobileNetV3** architectures for top-notch accuracy.
+![Model Architecture](img/model.png)
 
 ### **2. Application Structure**
 
