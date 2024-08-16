@@ -1,5 +1,8 @@
 # **Fashion Tagger: AI-Powered Fashion Image Labeling**
-
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gDgDjP37RGlMNYUoeJy1zH31y5F4baZR?usp=sharing)
+![Python](https://img.shields.io/badge/Python-3.8-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-1.8.0-orange)
+![Status](https://img.shields.io/badge/status-active-green)
 ## Project Overview
 
 <div style="display: flex; justify-content: space-between;">
