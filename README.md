@@ -71,7 +71,7 @@ The frontend is designed to provide a user-friendly interface for interacting wi
   <img src="img/4.png" alt="Home Page Overview" style="width: 48%;">
 </div>
 
-video Performance:
+**Performance Video:**
 ![Fashion Tagger Demo](per.gif)
 
 
